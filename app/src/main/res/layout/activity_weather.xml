@@ -1,18 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_weight="2"
+    android:padding="5dp"
     tools:context="com.mahbub.weatherapp.weatherapp.WeatherActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="5dp"
+        >
+        <TextView
+            android:id="@+id/tv_day_current"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            android:hint="ToDay"
+            />
+        <ImageView
+            android:id="@+id/iv_icon_weather"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+           android:layout_below="@+id/tv_day_current"
+            android:layout_alignParentLeft="true"
+            android:src="@mipmap/ic_launcher"
+            />
+        <TextView
+            android:id="@+id/tv_temp_current"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:layout_below="@id/iv_icon_weather"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:textSize="50sp"
+            android:hint="36 °"/>
+        <TextView
+            android:id="@+id/tv_temp_max"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_temp_current"
+            android:textSize="22dp"
+            android:hint="max\n36 °"
+            />
+        <TextView
+            android:id="@+id/tv_temp_min"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_temp_current"
+            android:layout_toRightOf="@id/tv_temp_max"
+            android:layout_marginLeft="10dp"
+            android:textSize="22dp"
+            android:hint="min\n16 °"
+            />
 
-</android.support.constraint.ConstraintLayout>
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/tv_day_current"
+            android:layout_alignTop="@+id/iv_icon_weather"
+            android:layout_marginStart="39dp"
+            android:hint="Friday 18 February"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/tv_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/tv_day_current"
+            android:layout_below="@id/tv_date"
+            android:layout_marginStart="39dp"
+            android:layout_marginTop="10dp"
+            android:hint="Untill midday light Rain.In the afternoon mostly cloudy"
+            android:textSize="16dp"
+
+             />
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>
